@@ -24,13 +24,13 @@ import pandas as pd
 from pandas_datareader import data as pdr
 from google.colab import  drive
 drive.mount("/drive", force_remount=True)
-quandl.ApiConfig.api_key ="8T_MwCyyd93FZLysnMrX"
+quandl.ApiConfig.api_key ="your_api_token"
 ###############################################################################
 #                               2. Read data                                  #
 ###############################################################################
 # Set label
 
-crypto_fund_index = quandl.get("EUREKA/682", authtoken="8T_MwCyyd93FZLysnMrX", start_date="2013-07-31", end_date="2020-07-31")
+crypto_fund_index = quandl.get("EUREKA/682", authtoken="your_api_token", start_date="2013-07-31", end_date="2020-07-31")
 oil = quandl.get("FRED/DCOILBRENTEU", authtoken="8T_MwCyyd93FZLysnMrX", start_date="2020-01-01", end_date="2020-08-01")
 gold = quandl.get("LBMA/GOLD", authtoken="8T_MwCyyd93FZLysnMrX", start_date="2020-01-01", end_date="2020-08-01")
 btc_usd = quandl.get("BITFINEX/BTCUSD", authtoken="8T_MwCyyd93FZLysnMrX", start_date="2020-01-01", end_date="2020-08-01")
@@ -47,14 +47,14 @@ btc_tx_vol = quandl.get("BCHAIN/ETRAV", authtoken="8T_MwCyyd93FZLysnMrX", start_
 ###############################################################################
 
 # Grab data
-crypto_fund_index.to_csv("/drive/My Drive/Python/financial_data/quandl/cryptofund_historical_returns.csv", sep = ',')
-oil.to_csv("/drive/My Drive/Python/financial_data/quandl/oil_historical_prices.csv", sep = ',')
-gold.to_csv("/drive/My Drive/Python/financial_data/quandl/gold_historical_prices.csv", sep = ',')
-btc_usd.to_csv("/drive/My Drive/Python/financial_data/quandl/btc_usd_historical_prices.csv", sep = ',')
-eth_btc.to_csv("/drive/My Drive/Python/financial_data/quandl/eth_btc_historical_prices.csv", sep = ',')
-eth_usd.to_csv("/drive/My Drive/Python/financial_data/quandl/eth_usd_historical_prices.csv", sep = ',')
-zcash_btc.to_csv("/drive/My Drive/Python/financial_data/quandl/zcash_btc_historical_prices.csv", sep = ',')
-zcash_usd.to_csv("/drive/My Drive/Python/financial_data/quandl/zcash_usd_historical_prices.csv", sep = ',')
-btc_wallets.to_csv("/drive/My Drive/Python/financial_data/quandl/btc_wallets.csv", sep = ',')
-btc_tx_val.to_csv("/drive/My Drive/Python/financial_data/quandl/btc_tx_val.csv", sep = ',')
-btc_tx_vol.to_csv("/drive/My Drive/Python/financial_data/quandl/btc_tx_vol.csv", sep = ',')
+crypto_fund_index.to_csv("/drive/cryptofund_historical_returns.csv", sep = ',')
+oil.to_csv("/drive/oil_historical_prices.csv", sep = ',')
+gold.to_csv("/drive/gold_historical_prices.csv", sep = ',')
+btc_usd.to_csv("/drive/btc_usd_historical_prices.csv", sep = ',')
+eth_btc.to_csv("/drive/eth_btc_historical_prices.csv", sep = ',')
+eth_usd.to_csv("/drive/eth_usd_historical_prices.csv", sep = ',')
+zcash_btc.to_csv("/drive/zcash_btc_historical_prices.csv", sep = ',')
+zcash_usd.to_csv("/drive/zcash_usd_historical_prices.csv", sep = ',')
+btc_wallets.to_csv("/drive/btc_wallets.csv", sep = ',')
+btc_tx_val.to_csv("/drive/btc_tx_val.csv", sep = ',')
+btc_tx_vol.to_csv("/drive/btc_tx_vol.csv", sep = ',')
